@@ -1,4 +1,4 @@
-#! /bin/python3i
+#! /bin/python3
 import sys
 
 # Program that ask user to input infix expression and convert it into postfix.
@@ -60,7 +60,7 @@ def toPostfix(infix):
         pop-tos, and push it into postfix, and repeat this command """
         
         if (isOperator(item)):
-            if len(stack) == 0:
+            if len(stack) == 0 or stack[-1] == "(":
                 stack.append(item)
                 print("{} is pushed into stack".format(item))
 
@@ -76,6 +76,8 @@ def toPostfix(infix):
                         print(pp + " is poped from stack")
                         postfix.append(pp)
                         print("{} is added into postfix".format( pp))
+                    stack.append(item)
+                    print("{} is append into stack.".format(item))
 
     # Empty stack and all push into postfix
     while stack:
