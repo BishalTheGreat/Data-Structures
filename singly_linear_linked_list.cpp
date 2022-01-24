@@ -109,7 +109,7 @@ void SLLL::push(int data){
 void SLLL::display(){
     Node *p = start;
     while(p->next != NULL){
-        cout<<p->data<<endl;
+        cout<<p->data<<" ----> ";
         p = p->next;
     }
     cout<<p->data<<endl;
